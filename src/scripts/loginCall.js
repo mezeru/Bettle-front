@@ -1,15 +1,12 @@
 import axios from 'axios';
+import 'regenerator-runtime/runtime';
 
-const api = axios.create({
-  baseURL:"http://localhost:3000/users/login"
-});
+export default async function(name,pass){
 
-export default function(name,pass){
-
-  api.get('/',{
+   const resp = await axios.get('http://localhost:3000/users/login',{
     params:{
-      name:name,
-      pass:pass
+      "name":name,
+      "password":pass
     }
   }).then(res => res).catch(e => {console.log(e)});
 

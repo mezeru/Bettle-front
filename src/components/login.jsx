@@ -1,21 +1,23 @@
 import React from 'react';
 import { useState } from 'react';
 import loginCall from '../scripts/loginCall';
+import 'regenerator-runtime/runtime';
 
 export default function Header() {
 
     const [name, setName] = useState("");
     const [pass, setPass] = useState("");
 
-    const handleSubmit = () => {
-      const resp = loginCall(name,pass);
-      console.log(resp);
+    const handleClick =  async (e) => {
+      e.preventDefault();
+      const resp = await loginCall(name,pass);
+      console.log(resp); 
     }
 
 
   return (
     <>
-    <form id="login" onSubmit={handleSubmit}>
+    <form id="login" onSubmit={e => {handleClick(e)}}>
       <h1>Login</h1>
 
       <div className="field">
@@ -40,5 +42,4 @@ export default function Header() {
   </>
   );
 }
-
 
