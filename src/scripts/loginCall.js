@@ -3,12 +3,19 @@ import 'regenerator-runtime/runtime';
 
 export default async function(name,pass){
 
-   const resp = await axios.get('http://localhost:3000/users/login',{
-    params:{
+  try{ 
+    const resp = await axios.post('http://localhost:3000/users/login',
+   {
       "name":name,
       "password":pass
-    }
-  }).then(res => res).catch(e => {console.log(e)});
+    }   
+  );
+  console.log(resp)
+}
+catch(e){
+  console.log(e);
+}
+
 
 }
 

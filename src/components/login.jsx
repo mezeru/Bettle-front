@@ -3,15 +3,14 @@ import { useState } from 'react';
 import loginCall from '../scripts/loginCall';
 import 'regenerator-runtime/runtime';
 
-export default function Header() {
+export default function Login() {
 
     const [name, setName] = useState("");
     const [pass, setPass] = useState("");
 
     const handleClick =  async (e) => {
       e.preventDefault();
-      const resp = await loginCall(name,pass);
-      console.log(resp); 
+      const resp = await loginCall(name.toString(),pass.toString());
     }
 
 

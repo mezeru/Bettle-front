@@ -33280,27 +33280,30 @@ function _ref() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return _axios.default.get('http://localhost:3000/users/login', {
-              params: {
-                "name": name,
-                "password": pass
-              }
-            }).then(function (res) {
-              return res;
-            }).catch(function (e) {
-              console.log(e);
+            _context.prev = 0;
+            _context.next = 3;
+            return _axios.default.post('http://localhost:3000/users/login', {
+              "name": name,
+              "password": pass
             });
 
-          case 2:
-            resp = _context.sent;
-
           case 3:
+            resp = _context.sent;
+            console.log(resp);
+            _context.next = 10;
+            break;
+
+          case 7:
+            _context.prev = 7;
+            _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
+
+          case 10:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee);
+    }, _callee, null, [[0, 7]]);
   }));
   return _ref.apply(this, arguments);
 }
@@ -33310,7 +33313,7 @@ function _ref() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Header;
+exports.default = Login;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -33340,7 +33343,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function Header() {
+function Login() {
   var _useState = (0, _react.useState)(""),
       _useState2 = _slicedToArray(_useState, 2),
       name = _useState2[0],
@@ -33360,13 +33363,12 @@ function Header() {
             case 0:
               e.preventDefault();
               _context.next = 3;
-              return (0, _loginCall.default)(name, pass);
+              return (0, _loginCall.default)(name.toString(), pass.toString());
 
             case 3:
               resp = _context.sent;
-              console.log(resp);
 
-            case 5:
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -33531,7 +33533,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57307" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52067" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
