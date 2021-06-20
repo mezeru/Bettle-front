@@ -10,10 +10,11 @@ export default async function(name,pass){
       "password":pass
     }   
   );
-  console.log(resp)
+  return resp;
+
 }
 catch(e){
-  console.log(e);
+  return e;
 }
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import loginCall from '../scripts/loginCall';
 import 'regenerator-runtime/runtime';
+import  { Redirect } from 'react-router-dom';
 
 export default function Login() {
 
@@ -11,6 +12,14 @@ export default function Login() {
     const handleClick =  async (e) => {
       e.preventDefault();
       const resp = await loginCall(name.toString(),pass.toString());
+
+      if(resp.status === 200){
+        <Redirect to="/info" />
+      }
+      else{
+        alert("Error");
+      }
+
     }
 
 
