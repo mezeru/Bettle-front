@@ -16,8 +16,8 @@ body{
     display: flex;
     align-items: center;
     row-gap: 50px;
-    height: 60vh;
-    width: 20vw;
+    height: 70vh;
+    width: 30vw;
     background-color:#ffffff;
     border-radius: 50px;
     flex-direction: column;
@@ -68,28 +68,7 @@ body{
 
     }
 
-    .btn{
-        display: flex;
-        justify-content: center;
-
-        button{
-            height: 50px;
-            width: 120px;
-            font-size: 1.5rem;
-            font-family: $g-font;
-            border: none;
-            background-color: blueviolet;
-            border-radius: 10px;
-            color: white;
-            transition: 0.3s ease-in-out;
-        }
-        button:hover{
-            box-shadow: 0px 20px 50px -15px rgb(90, 89, 89);
-            transform: translateY(-5px);
-            
-        }
-
-    }
+    
 
     .redirect{
         p{
@@ -100,5 +79,53 @@ body{
         }
     }
 
+
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+
+    button{
+        height: 50px;
+        width: 120px;
+        font-size: 1.5rem;
+        font-family: $g-font;
+        border: none;
+        background-color: blueviolet;
+        border-radius: 10px;
+        color: white;
+        transition: 0.3s ease-in-out;
+    }
+    button:hover{
+        box-shadow: 0px 20px 50px -15px rgb(90, 89, 89);
+        transform: translateY(-5px);
+        
+    }
+
+}
+
+.home-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .hm-btn{
+        height: 50px;
+        width: 120px;
+        font-size: 1.5rem;
+        font-family: $g-font;
+        border: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: blueviolet;
+        transition: 0.3s ease-in-out;
+            }  
+
+    .hm-btn:hover{
+    box-shadow: 0px 20px 50px -15px rgb(255, 255, 255);
+    transform: translateY(-5px);
+    color:dodgerblue;
+    }
 
 }

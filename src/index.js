@@ -5,7 +5,8 @@ import Login from './components/login';
 import InfoPage from './components/infoPage';
 import './styles/styles.scss';
 import { BrowserRouter as Router, Switch,Route } from 'react-router-dom';
-import Homepage from './components/homepage'
+import Homepage from './components/homepage';
+import Customer from './components/customer';
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
             <Switch>
                 <Route path="/Login" component={Login}/>
                 <Route path="/info" component={InfoPage} />
+                <Route path="/customer" component={Customer} />
                 <Route path="/" component={Homepage} />
             </Switch>
         </Router>

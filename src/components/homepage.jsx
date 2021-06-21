@@ -6,9 +6,21 @@ export default function infoPage(){
 
 
     return(
-        <Link to="/login">
-            <button>Login</button>
-        </Link>
+        <div className="home-btns">
+            <Link to="/login" >
+                <div>
+                    <button className="hm-btn">Login</button>
+                </div>
+            </Link>
+
+            <Link to="/customer" >
+                <div>
+                    <button className="hm-btn" >Customer</button>
+                </div>
+            </Link>
+
+        </div>
+        
     )
 
 }
