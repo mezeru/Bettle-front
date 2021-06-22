@@ -1,14 +1,15 @@
 import axios from "axios";
 
-export default async function(name,pass){
+export default async function(pincode,contact){
 
     try{ 
-      const resp = await axios.post('http://localhost:3000/users/customer',
+      const resp = await axios.put('http://localhost:3000/customer',
      {
-        "name":name,
-        "password":pass
-      }   
+        "pincode":pincode,
+        "contact":contact
+      }
     );
+
     return resp;
   
   }

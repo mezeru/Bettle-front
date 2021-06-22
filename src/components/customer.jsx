@@ -1,23 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { useState } from 'react';
-
-
-
+import { useHistory } from "react-router-dom";
+import customerSubmit from '../scripts/customerSubmit';
+import { Link } from 'react-router-dom';
 
 export default function customer(){
+
+    let history = useHistory();
 
     const [pincode,usePincode] = useState("");
     const [contact,useContact] = useState("");
 
-    function handleClick(e){
+    async function handleClick(e){
         e.preventDefault();
-        
+        const resp = await customerSubmit(pincode,contact);
+
+        if(resp.status === 200){
+            alert("Alert Send");
+            history.push('/');
+        }
+        else{
+            alert("User Not Found")
+        }
+
     };
 
     return(
         <>
-
         <form id="login" onSubmit={e => {handleClick(e)}}>
         <h1>Customer</h1>
 
@@ -36,7 +45,7 @@ export default function customer(){
         </div>
 
         <div className="redirect">
-            <p>If you are a Branch Incharge <a href="#">Click Here</a></p>
+            <p>If you are a Branch Incharge <Link to="/Login">Click Here</Link></p>
         </div>
 
         </form>

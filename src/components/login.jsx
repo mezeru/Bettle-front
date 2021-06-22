@@ -1,10 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 import loginCall from '../scripts/loginCall';
 import 'regenerator-runtime/runtime';
 import  { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
+
+    let history = useHistory();
 
     const [name, setName] = useState("");
     const [pass, setPass] = useState("");
@@ -14,7 +18,7 @@ export default function Login() {
       const resp = await loginCall(name.toString(),pass.toString());
 
       if(resp.status === 200){
-        <Redirect to="/info" />
+        history.push('/info');
       }
       else{
         alert("Error");
@@ -25,6 +29,7 @@ export default function Login() {
 
   return (
     <>
+
     <form id="login" onSubmit={e => {handleClick(e)}}>
       <h1>Login</h1>
 
@@ -43,7 +48,7 @@ export default function Login() {
       </div>
 
       <div className="redirect">
-        <p>If you are not a Branch Incharge <a href="#">Click Here</a></p>
+        <p>If you are not a Branch Incharge <Link to="/customer">Click Here</Link></p>
       </div>
 
     </form>
