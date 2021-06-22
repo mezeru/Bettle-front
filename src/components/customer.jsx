@@ -20,7 +20,7 @@ export default function customer(){
             history.push('/');
         }
         else{
-            alert("User Not Found")
+            alert("Pincode Not Assiciated With any Branch")
         }
 
     };
@@ -37,7 +37,7 @@ export default function customer(){
 
         <div className="field">
             <p>Pin Code </p>
-            <input type="text" placeholder="Type your Contact Number" value={pincode.value} onChange={(e) => { usePincode(e.target.value)}} ></input>
+            <input type="text" placeholder="Type The Pincode of the branch" value={pincode.value} onChange={(e) => { usePincode(e.target.value)}} ></input>
         </div>
 
         <div className="field btn">

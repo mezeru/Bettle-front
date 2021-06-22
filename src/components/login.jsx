@@ -21,7 +21,7 @@ export default function Login() {
         history.push('/info');
       }
       else{
-        alert("Error");
+        alert("Wrong Credentials");
       }
 
     }
