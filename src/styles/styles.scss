@@ -1,5 +1,11 @@
 $g-font: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
 
+@mixin disflex() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 body{
     padding: 0;
     margin: 0;
@@ -130,3 +136,6 @@ body{
 
 }
 
+.container{
+    @include disflex;
+}
