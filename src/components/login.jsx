@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import loginCall from '../scripts/loginCall';
 import 'regenerator-runtime/runtime';
 import  { Redirect } from 'react-router-dom';
+import { bake_cookie, read_cookie, delete_cookie } from 'sfcookies';
 import { Link } from 'react-router-dom';
 
 export default function Login() {
@@ -18,6 +19,9 @@ export default function Login() {
       const resp = await loginCall(name.toString(),pass.toString());
 
       if(resp.status === 200){
+        const cookie_tokens = 'tokens';
+        bake_cookie(cookie_tokens,resp.data);
+
         history.push('/info');
       }
       else{

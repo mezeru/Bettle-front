@@ -7,9 +7,18 @@ import './styles/styles.scss';
 import { BrowserRouter as Router, Switch,Route } from 'react-router-dom';
 import Homepage from './components/homepage';
 import Customer from './components/customer';
+import { delete_cookie } from 'sfcookies';
 
-const App = () => {
-    return (
+
+class App extends React.Component {
+
+    componentDidMount() {
+        delete_cookie('tokens');
+    }
+
+
+    render(){
+      return (
         <Router>
             <Switch>
                 <Route path="/Login" component={Login}/>
@@ -18,7 +27,8 @@ const App = () => {
                 <Route path="/" component={Homepage} />
             </Switch>
         </Router>
-    )
+        )
+    }
 }
 
 ReactDOM.render(<App/>,document.getElementById('root'));
