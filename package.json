@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "devStart": "parcel src/index.html"
+    "devStart": "parcel src/index.html",
+    "start": "node src/index.html"
   },
   "dependencies": {
     "axios": "^0.21.1",
