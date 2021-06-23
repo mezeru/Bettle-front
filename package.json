@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
     "devStart": "parcel src/index.html"
+=======
+     "devStart": "parcel src/index.html"
+>>>>>>> 153fd83141251412f63414266416487f67ae1a44
   },
   "dependencies": {
     "axios": "^0.21.1",
