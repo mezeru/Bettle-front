@@ -6,6 +6,7 @@
   "scripts": {
     "devStart": "parcel src/index.html",
     "start": "cross-env NODE_ENV=development parcel src/index.html ",
+    "build": "parcel build index.html --public-url /Bettle-front/"
   },
   "dependencies": {
     "axios": "^0.21.1",
