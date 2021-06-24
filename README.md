@@ -8,7 +8,7 @@ Hosted on netlify : https://bettle-app.netlify.app/
 - HTML (HyperText Markup Language)
 - SCSS (Syntactically Awesome Style Sheets)
 - Js (JavaScript)
-- Parcel Bundler
+- Parcel Bundler (React)
 - React (JSX)
 
 ---
