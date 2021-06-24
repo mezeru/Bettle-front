@@ -6,11 +6,11 @@ import logoutCall from '../scripts/logoutCall'
 import { useHistory } from "react-router";
 import socketIOClient from 'socket.io-client';
 import { read_cookie } from "sfcookies";
+import seen from "../scripts/seen";
 
 export default function infoPage(){
 
   let history = useHistory();
-
   let socket;
   useEffect(() => {
     socket = socketIOClient("http://localhost:3001/");
@@ -20,7 +20,6 @@ export default function infoPage(){
     });
   });
 
-  console.log(read_cookie("tokens"))
   if(read_cookie("tokens").length === 0){
       history.push('/login');
   }
@@ -34,13 +33,14 @@ export default function infoPage(){
     let token = read_cookie('tokens');
     socket.emit('fetchData',branchName,token);
   }
-  
-    
 
+  const handleSeen = (id) => {
+    seen(id,read_cookie('branchName'));
+  }
     
     const alertCards = alerts.map(alert => {
       return(
-        <div className="alert-card" >
+        <div className="alert-card" key={alert._id} onClick={() => handleSeen(alert._id)}>
           <h1>Alert !!</h1>
           <p>{alert.contactinfo}</p>
           <p>{alert.Time.split(" ")[0]}</p>
