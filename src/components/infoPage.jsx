@@ -30,8 +30,9 @@ export default function infoPage(){
 
   const handleClick = (e) => {
     e.preventDefault();
+    let branchName = read_cookie('branchName')
     let token = read_cookie('tokens');
-    socket.emit('fetchData',"Badlapur",token);
+    socket.emit('fetchData',branchName,token);
   }
   
     
@@ -40,9 +41,11 @@ export default function infoPage(){
     const alertCards = alerts.map(alert => {
       return(
         <div className="alert-card" >
-          <h1>{alert.contactinfo}</h1>
+          <h1>Alert !!</h1>
+          <p>{alert.contactinfo}</p>
           <p>{alert.Time.split(" ")[0]}</p>
           <p>{alert.Time.split(" ")[1]}</p>
+          <p>{alert.pincode}</p>
         </div>
       )
     })

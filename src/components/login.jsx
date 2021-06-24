@@ -22,6 +22,9 @@ export default function Login() {
         const cookie_tokens = 'tokens';
         bake_cookie(cookie_tokens,resp.data);
 
+        const cookie_branchName = 'branchName';
+        bake_cookie(cookie_branchName,name);
+
         history.push('/info');
       }
       else{

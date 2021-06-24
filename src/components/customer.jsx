@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import customerSubmit from '../scripts/customerSubmit';
 import { Link } from 'react-router-dom';
+import { bake_cookie } from 'sfcookies';
 
 export default function customer(){
 
@@ -14,10 +15,10 @@ export default function customer(){
     async function handleClick(e){
         e.preventDefault();
         const resp = await customerSubmit(pincode,contact);
-
+        console.log(resp);
         if(resp.status === 200){
-            alert("Alert Send");
-            history.push('/');
+            bake_cookie('branchesInfo',resp.data.branches)
+            history.push('/customerBranchInfo');
         }
         else{
             alert("Pincode Not Assiciated With any Branch")
