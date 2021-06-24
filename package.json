@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "npm":"parcel build src/index.html"
      "devStart": "parcel src/index.html",
      "predeploy": "rm -rf dist && parcel build index.html --public--url /parcel-gh-pages-deploy",
      "deploy": "gh-pages -d dist"
