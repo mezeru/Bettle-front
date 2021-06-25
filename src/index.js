@@ -9,6 +9,7 @@ import Homepage from './components/homepage';
 import Customer from './components/customer';
 import { delete_cookie } from 'sfcookies';
 import customerBranchInfo from './components/customerBranchInfo';
+import NavHeader from './components/navHeader';
 
 class App extends React.Component {
 
@@ -19,6 +20,9 @@ class App extends React.Component {
 
     render(){
       return (
+          <>
+          <NavHeader/>
+          <div className="container">
         <Router>
             <Switch>
                 <Route path="/Login" component={Login}/>
@@ -28,6 +32,8 @@ class App extends React.Component {
                 <Route path="/" component={Homepage} />
             </Switch>
         </Router>
+        </div>
+        </>
         )
     }
 }
