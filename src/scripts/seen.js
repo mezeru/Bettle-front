@@ -7,7 +7,7 @@ export default async function(id ,name){
 
         console.log(id,name);
 
-      const resp = await axios.post('http://localhost:3000/users/seen',
+      const resp = await axios.post('https://bettle-backend.herokuapp.com/users/seen',
       {
         name:name,
         id:id
