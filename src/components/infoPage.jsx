@@ -13,7 +13,7 @@ export default function infoPage(){
   let history = useHistory();
   let socket;
   useEffect(() => {
-    socket = socketIOClient("http://localhost:3001/");
+    socket = socketIOClient("https://bettle-backend.herokuapp.com:3001");
     socket.on('sendAlerts', (alerts) =>{
       useAlerts(alerts);
       useDisable("none");
