@@ -13,7 +13,7 @@ export default function infoPage(){
   let history = useHistory();
   let socket;
   useEffect(() => {
-    socket = socketIOClient("https://bettle-backend.herokuapp.com:3001");
+    socket = socketIOClient("http://localhost:3001");
     socket.on('sendAlerts', (alerts) =>{
       useAlerts(alerts);
       useDisable("none");
@@ -27,6 +27,14 @@ export default function infoPage(){
   const [alerts,useAlerts] = useState([]);
   const [disable,useDisable] = useState();
 
+  const seenStyle = {
+    background:"linear-gradient(0deg, rgba(34,37,195,1) 0%, rgba(56,255,0,1) 100%)"
+  }
+
+  const unSeen = {
+    background: " linear-gradient(0deg, rgba(39,34,195,1) 0%, rgba(255,0,0,1) 100%)"
+  }
+
   const handleClick = (e) => {
     e.preventDefault();
     let branchName = read_cookie('branchName')
@@ -37,18 +45,23 @@ export default function infoPage(){
   const handleSeen = (id) => {
     seen(id,read_cookie('branchName'));
   }
-    
+
     const alertCards = alerts.map(alert => {
       return(
-        <div className="alert-card" key={alert._id} onClick={() => handleSeen(alert._id)}>
+        <div className="alert-card" key={alert._id} onClick={() => handleSeen(alert._id)} style={alert.Seen ? seenStyle : unSeen }>
           <h1>Alert !!</h1>
+          <p>{alert.pincode ? alert.pincode : null}</p>
           <p>{alert.contactinfo}</p>
           <p>{alert.Time.split(" ")[0]}</p>
           <p>{alert.Time.split(" ")[1]}</p>
-          <p>{alert.pincode}</p>
         </div>
       )
     })
+
+    alerts.forEach(alert => {
+      if(!alert.Seen)
+      {seen(alert._id,read_cookie('branchName'));}
+    });
 
     return(
       <>

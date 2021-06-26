@@ -5,8 +5,6 @@ export default async function(id ,name){
 
     try{
 
-        console.log(id,name);
-
       const resp = await axios.post('https://bettle-backend.herokuapp.com/users/seen',
       {
         name:name,
