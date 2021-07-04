@@ -2,8 +2,6 @@
 
 Made for SuperProcure Round 1 Assignment
 
-Hosted on netlify : https://bettle-app.netlify.app/
-
 ## The Technologies used :
 - HTML (HyperText Markup Language)
 - SCSS (Syntactically Awesome Style Sheets)
