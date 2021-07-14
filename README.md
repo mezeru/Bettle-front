@@ -1,6 +1,6 @@
 # Bettle-APP UI (Front End)
 
-Made for SuperProcure Round 1 Assignment
+Made for SuperProcure Assignment (Scavenger Hunt)
 
 ## The Technologies used :
 - HTML (HyperText Markup Language)
